@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="google-signin-client_id" content="294048336693-k3k3ckn923jorlmvqou6akmba22mnutg.apps.googleusercontent.com">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <script defer src="js/client.js"></script>
+    <link rel="stylesheet" href="css/styles.css"></link>   
+    <title>Chat</title>
+</head>
+<body>
+    <div id="message-container"></div>
+    <form id="send-container">
+        <div class="input-group mt-3">
+            <input type="text" class="form-control" placeholder="Message" aria-label="Message" aria-describedby="button-addon2" id="message-input">
+            <div class="input-group-append">
+                <button class="btn btn-outline-primary" type="submit" id="send-button">Send</button>
+            </div>
+        </div>
+    </form>
+    <div class="container" id="auth-container">
+        <div class="row">
+            <div class="col">
+                    <div class="g-signin2 btn" data-onsuccess="onGoogleSignIn" id="google-sign-in"></div>
+            </div>
+            <div class="col">
+                <div class="input-group mt-3"  id="name-sign-in">
+                    <input type="text" class="form-control" placeholder="Nickname" aria-label="Nickname" aria-describedby="button-addon2" id="name-input">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-primary" onclick="onNameSignIn();" type="button">Log In</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button  class="btn btn-outline-primary"  onclick="logOut();" id="sign-out">Sign out</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
